@@ -7,6 +7,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -44,7 +45,7 @@ public class Order {
     private List<OrderItem> orderItems;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id")
+    @JoinColumn(name = "customer_id", nullable=false)
     private Customer customer;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -52,11 +53,14 @@ public class Order {
     private Address shippingAddress;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "billing_address_id", referencedColumnName = "id")
+    @JoinColumn(name = "billing_address_id", referencedColumnName = "id", nullable=false)
     private Address billingAddress;
 
     public void add(OrderItem item) {
         if(item != null) {
+            if(orderItems == null) {
+                orderItems = new ArrayList<>();
+            }
             orderItems.add(item);
             item.setOrder(this);
         }

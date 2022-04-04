@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -30,6 +31,9 @@ public class Customer {
 
     public void add(Order order) {
         if(order != null) {
+            if(orders == null) {
+                orders = new ArrayList<>();
+            }
             orders.add(order);
             order.setCustomer(this);
         }
