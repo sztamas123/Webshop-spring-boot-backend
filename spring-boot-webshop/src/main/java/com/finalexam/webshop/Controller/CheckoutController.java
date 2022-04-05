@@ -4,12 +4,12 @@ import com.finalexam.webshop.Dto.Purchase;
 import com.finalexam.webshop.Dto.PurchaseResponse;
 import com.finalexam.webshop.Service.CheckoutService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/checkout")
-@CrossOrigin("http://localhost:4200")
 public class CheckoutController {
 
     @Autowired
