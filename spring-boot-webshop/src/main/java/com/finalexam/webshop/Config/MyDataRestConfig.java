@@ -1,9 +1,6 @@
 package com.finalexam.webshop.Config;
 
-import com.finalexam.webshop.Entity.Country;
-import com.finalexam.webshop.Entity.County;
-import com.finalexam.webshop.Entity.Product;
-import com.finalexam.webshop.Entity.ProductCategory;
+import com.finalexam.webshop.Entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
@@ -37,6 +34,10 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
                 .withCollectionExposure(((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions)));
 
         config.getExposureConfiguration().forDomainType(County.class)
+                .withItemExposure(((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions)))
+                .withCollectionExposure(((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions)));
+
+        config.getExposureConfiguration().forDomainType(Order.class)
                 .withItemExposure(((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions)))
                 .withCollectionExposure(((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions)));
 
