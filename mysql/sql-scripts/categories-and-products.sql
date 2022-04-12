@@ -1,7 +1,3 @@
-
-DROP SCHEMA IF EXISTS `webshop`;
-
-CREATE SCHEMA `webshop`;
 USE `webshop` ;
 
 
@@ -38,6 +34,10 @@ INSERT INTO product_category(category_name) VALUES ('Laptops');
 INSERT INTO product_category(category_name) VALUES ('Phones');
 INSERT INTO product_category(category_name) VALUES ('Televisions');
 INSERT INTO product_category(category_name) VALUES ('Consoles');
+INSERT INTO product_category(category_name) VALUES ('Cameras');
+INSERT INTO product_category(category_name) VALUES ('Headphones');
+INSERT INTO product_category(category_name) VALUES ('Keyboards');
+INSERT INTO product_category(category_name) VALUES ('Mouses');
 
 -- -----------------------------------------------------
 -- Laptops
@@ -88,4 +88,31 @@ INSERT INTO product (sku, name, description, image_url, active, units_in_stock, 
 INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Console-04', 'Xbox series x', 'Xbox series x console with 1TB storage', 'assets/images/products/consoles/ps4.png', 1, 100, 769, 4, NOW());
 
 
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Camera-01', 'Canon camera', 'Canon pro camera', 'assets/images/products/cameras/camera.png', 1, 100, 549, 5, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Camera-02', 'Sony camera', 'Sony pro camera', 'assets/images/products/cameras/camera.png', 1, 100, 777, 5, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Camera-03', 'Nikon camera', 'Nikon pro camera', 'assets/images/products/cameras/camera.png', 1, 100, 567, 5, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Camera-04', 'Canon camera', 'Canon professional camera', 'assets/images/products/cameras/camera.png', 1, 100, 779, 5, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Camera-05', 'Sony camera', 'Sony professional camera', 'assets/images/products/cameras/camera.png', 1, 100, 999, 5, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Camera-06', 'Nikon camera', 'Nikon professional camera', 'assets/images/products/cameras/camera.png', 1, 100, 896, 5, NOW());
+
+
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Headphone-01', 'Sony headphone', 'Sony headphone', 'assets/images/products/headphones/headphone.png', 1, 100, 56, 6, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Headphone-02', 'Boose headphone', 'Boose headphone with noise cancellation', 'assets/images/products/headphones/headphone.png', 1, 100, 249, 6, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Headphone-03', 'JBL headphone', 'JBL headphone with noise cancellation', 'assets/images/products/headphones/headphone.png', 1, 100, 129, 6, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Headphone-04', 'Logitech headphone', 'Logitech headphone', 'assets/images/products/headphones/headphone.png', 1, 100, 87, 6, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Headphone-05', 'Jabra headphone', 'Jabra headphone', 'assets/images/products/headphones/headphone.png', 1, 100, 76, 6, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Headphone-06', 'Sony headphone', 'Sony headphone with noise cancellation', 'assets/images/products/headphones/headphone.png', 1, 100, 215, 6, NOW());
+
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Keyboard-01', 'Logitech keyboard', 'Logitech mechanical keyboard', 'assets/images/products/keyboards/keyboard.png', 1, 100, 43, 7, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Keyboard-02', 'Razer keyboard', 'Razer mechanical keyboard', 'assets/images/products/keyboards/keyboard.png', 1, 100, 98, 7, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Keyboard-03', 'HP keyboard', 'HP keyboard', 'assets/images/products/keyboards/keyboard.png', 1, 100, 23, 7, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Keyboard-04', 'Hyperx keyboard', 'Hyperx mechanical keyboard', 'assets/images/products/keyboards/keyboard.png', 1, 100, 79, 7, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Keyboard-05', 'Apple keyboard', 'Apple wireless keyboard', 'assets/images/products/keyboards/keyboard.png', 1, 100, 159, 7, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Keyboard-06', 'Logitech keyboard', 'Logitech wireless keyboard', 'assets/images/products/keyboards/keyboard.png', 1, 100, 89, 7, NOW());
+
+
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Mouse-01', 'Logitech mouse', 'Logitech gaming mouse', 'assets/images/products/mouses/mouse.png', 1, 100, 37, 8, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Mouse-02', 'Razer mouse', 'Razer gaming mouse', 'assets/images/products/mouses/mouse.png', 1, 100, 78, 8, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Mouse-03', 'Microsoft mouse', 'Microsoft wireless mouse', 'assets/images/products/mouses/mouse.png', 1, 100, 21, 8, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('Mouse-04', 'Logitech mouse', 'Logitech wireless mouse', 'assets/images/products/mouses/mouse.png', 1, 100, 45, 8, NOW());
 
