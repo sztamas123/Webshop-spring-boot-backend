@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: full-stack-webshop_app-server
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8443
+          env:   # Setting Environmental Variables
+            - name: DB_HOST   # Setting Database host address
+              value: mysql
+            - name: DB_NAME  # Setting Database name
+              value: webshop
+            - name: DB_USERNAME  # Setting Database username
+              value: root
+            - name: DB_PASSWORD # Setting Database password
+              value: root
+            - name: OKTA_CLIENT_ID
+              value: 0oa4khqwz8fSJTpBr5d7
+            - name: OKTA_CLIENT_SECRET
+              value: CdJYRpesl-6afW-OdTgye1qqVDfQGtoMqcKj2G_U
+            - name: OKTA_ISSUER
+              value: https://dev-57359016.okta.com/oauth2/default
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  ports:
+    - protocol: "TCP"
+      port: 8443    # Port inside the cluster
+      targetPort:
+      nodePort: 30163
+  selector:
+    app: backend
+  type: NodePort

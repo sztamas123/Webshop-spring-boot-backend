@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.logging.Logger;
 
 
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/checkout")
 public class CheckoutController {
